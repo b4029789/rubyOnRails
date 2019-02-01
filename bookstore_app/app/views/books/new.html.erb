@@ -2,7 +2,7 @@
 
 <h1>Add new book</h1>
 
-<%= form_for :book do  |f| %>
+<%= form_for :book, url: books_path do  |f| %>
 <div class="form-group">
 <%= f.label :title %>
 <%= f.text_field :title %>
