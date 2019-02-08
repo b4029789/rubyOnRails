@@ -1,0 +1,15 @@
+<div class="container">
+<h2>All genres</h2>
+<table border="1" class="table">
+<tr>
+	<th>Name</th>
+</tr>
+
+<% @genre.each do |genre| %>
+<tr>
+<td><%= genre.name %></td>
+<td><%= link_to 'Genre page', genre_path(genre) %></td>
+</tr>
+<% end %>
+</table>
+</div>

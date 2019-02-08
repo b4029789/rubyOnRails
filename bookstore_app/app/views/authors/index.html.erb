@@ -1,0 +1,31 @@
+<div class="container">
+<h2>All authors</h2>
+<table border="1" class="table">
+<tr>
+	<th>First name</th>
+	<th>Last name</th>
+	<th>Biography</th>
+</tr>
+
+<% @author.each do |author| %>
+<tr>
+<td><%= author.fname %></td>
+<td><%= author.lname%></td>
+<td><%= author.bio%></td>
+<td><%= link_to 'Author page', author_path(author) %></td>
+</tr>
+<% end %>
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
