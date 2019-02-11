@@ -29,6 +29,14 @@ class AuthorsController < ApplicationController
   def destroy
   end
 
+  def search
+    @author = if params[:term]
+      Author.where('lname LIKE ?', "%#{params[:term]}")
+    else
+      Author.all
+    end
+  end
+
   private
   def author_params
     params.require(:author).permit(:fname, :lname, :bio)

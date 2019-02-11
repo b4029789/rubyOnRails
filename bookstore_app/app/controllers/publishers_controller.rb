@@ -29,6 +29,14 @@ class PublishersController < ApplicationController
   def destroy
   end
 
+  def search
+    @publisher = if params[:term]
+      Publisher.where('country LIKE ?', "%#{params[:term]}")
+    else
+      Publisher.all
+    end
+  end
+
   private
   def publisher_params
     params.require(:publisher).permit(:name,:country)

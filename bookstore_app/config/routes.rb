@@ -32,9 +32,21 @@ Rails.application.routes.draw do
   get 'static_pages/about'
   get 'static_pages/contact'
   resources :books
-  resources :authors
+  resources :authors do 
+    collection do
+      get :search
+    end
+  end
   resources :genres
-  resources :publishers
-  resources :novels
+  resources :publishers do
+    collection do
+      get :search
+    end
+  end 
+  resources :novels do
+    collection do
+      get :search
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
