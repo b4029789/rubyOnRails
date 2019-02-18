@@ -4010,3 +4010,1790 @@ Processing by PublishersController#search as HTML
 Completed 200 OK in 213ms (Views: 211.2ms | ActiveRecord: 1.1ms)
 
 
+  [1m[35m (23.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT GET_LOCK('386464997076477690', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20190211102118)
+  [1m[35m (39.9ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `userid` varchar(255), `email` varchar(255), `password_digest` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190211102118_create_users.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (3.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190211102118')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('386464997076477690')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Started GET "/novels" for 127.0.0.1 at 2019-02-11 10:40:57 +0000
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (7.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by NovelsController#index as HTML
+  Rendering novels/index.html.erb within layouts/application
+  [1m[36mNovel Load (0.5ms)[0m  [1m[34mSELECT `novels`.* FROM `novels`[0m
+  ↳ app/views/novels/index.html.erb:21
+  Rendered novels/index.html.erb within layouts/application (42.2ms)
+Completed 200 OK in 1602ms (Views: 1554.8ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 10:41:03 +0000
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 579ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x00007f0740cca490>
+Did you mean?  users_params):
+  
+app/controllers/users_controller.rb:7:in `new'
+Started GET "/users/create" for 127.0.0.1 at 2019-02-11 10:41:30 +0000
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 10:42:33 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 5.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+     6: 
+     7: <div class="field" style="100%">
+     8: 
+     9: 	<% if @users.errors.any? %>
+    10: 
+    11: 	<div id="error_explanation">
+    12: 
+  
+app/views/users/new.html.erb:9:in `block in _app_views_users_new_html_erb__612917510305306850_69834574673680'
+app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb__612917510305306850_69834574673680'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 10:43:10 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (60.0ms)
+Completed 200 OK in 179ms (Views: 177.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-11 10:43:25 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2LamlVhQziP+aK/5DlpsDL4/bCmKAE3ITZlOhURUkWhxnhA2pg0ecoV4eGsziTAQI7GZ7cudVZiawt+FTLTyNQ==", "user"=>{"userid"=>"fred1", "email"=>"fred@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create account"}
+Completed 500 Internal Server Error in 407ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x00007f0741960a88>
+Did you mean?  users_params):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for 127.0.0.1 at 2019-02-11 10:45:38 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2LamlVhQziP+aK/5DlpsDL4/bCmKAE3ITZlOhURUkWhxnhA2pg0ecoV4eGsziTAQI7GZ7cudVZiawt+FTLTyNQ==", "user"=>{"userid"=>"fred1", "email"=>"fred@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create account"}
+Completed 500 Internal Server Error in 509ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x00007f0740d5b788>
+Did you mean?  users_params):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started GET "/user/new" for 127.0.0.1 at 2019-02-11 10:46:50 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/user/new"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 10:46:56 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 144ms (Views: 130.6ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-11 10:47:06 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2pN6AHqV6GFukILfjYaDAWRUVtm3QxxX7oS7lc44l7Nzu8yjhMg4MBWAVU2wVd8d+dqjHfbeBAc53yqVxtj07g==", "user"=>{"userid"=>"fred1", "email"=>"fred@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create account"}
+Completed 500 Internal Server Error in 499ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x00007f07426115c0>
+Did you mean?  users_params):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 10:47:33 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 130ms (Views: 125.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-11 10:47:49 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s87szn4UC5Cy28gMArerlFxa5ms3IOcXvp/tWfPwVD0a5lptgEnbwcnLH54/ZPeIwdQTr3a9/0dpxHxZ+xA3YA==", "user"=>{"userid"=>"fred1", "email"=>"fred@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create account"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO `users` (`userid`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('fred1', 'fred@gmail.com', '$2a$10$KVeLU7.DZDHitUwYDsE8s.YMHKHhFlwn3yHus/3mINn9wZIy0Uve2', '2019-02-11 10:47:49', '2019-02-11 10:47:49')[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:12
+Redirected to http://localhost:3000/novels
+Completed 302 Found in 214ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/novels" for 127.0.0.1 at 2019-02-11 10:47:49 +0000
+Processing by NovelsController#index as HTML
+  Rendering novels/index.html.erb within layouts/application
+  [1m[36mNovel Load (0.4ms)[0m  [1m[34mSELECT `novels`.* FROM `novels`[0m
+  ↳ app/views/novels/index.html.erb:21
+  Rendered novels/index.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 162ms (Views: 146.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/novels" for 127.0.0.1 at 2019-02-11 10:55:15 +0000
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by NovelsController#index as HTML
+  Rendering novels/index.html.erb within layouts/application
+  [1m[36mNovel Load (0.1ms)[0m  [1m[34mSELECT `novels`.* FROM `novels`[0m
+  ↳ app/views/novels/index.html.erb:21
+  Rendered novels/index.html.erb within layouts/application (54.8ms)
+Completed 200 OK in 684ms (Views: 644.1ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 10:55:19 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 172ms (Views: 156.2ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-11 10:55:30 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gDYb/mfw9DsyUUyb6WMTuBsqzaoUGziVKCC0Y/908pkpHq1dma0kaklBmwnUsE+khqQ4blWGIMX/eyVj95SRxA==", "user"=>{"userid"=>"fred2", "email"=>"fred@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create account"}
+  [1m[35m (5.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Create (3.0ms)[0m  [1m[32mINSERT INTO `users` (`userid`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('fred2', 'fred@gmail.com', '$2a$10$9Y7HLX19IFugk/Zh0FgvCe07uovTiaMh3W.d2k9TT2X6M5XgIsD6.', '2019-02-11 10:55:30', '2019-02-11 10:55:30')[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (11.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 500 Internal Server Error in 678ms (ActiveRecord: 19.6ms)
+
+
+  
+NameError (undefined local variable or method `static_pages_path' for #<UsersController:0x000055d0632b1a40>
+Did you mean?  static_pages_home_path):
+  
+app/controllers/users_controller.rb:14:in `create'
+Started GET "/users" for 127.0.0.1 at 2019-02-11 10:57:51 +0000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 111ms (Views: 110.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 10:58:01 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 190ms (Views: 144.0ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-11 10:58:18 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zc3iWUMGtpvWzXrvxhQ007KQcw9lTmnZdkeRq3Bbyw1k5VT6vVtmyq3drX37x2jPLx6GyyTTcYmhHACreLuoUA==", "user"=>{"userid"=>"george1", "email"=>"george@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create account"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Create (2.5ms)[0m  [1m[32mINSERT INTO `users` (`userid`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('george1', 'george@gmail.com', '$2a$10$FM/7vR/LgQNZ.Q1wj0Im/utlPWkqaXAP0zYDySNCv16OCTfYC6GO2', '2019-02-11 10:58:18', '2019-02-11 10:58:18')[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:12
+Redirected to http://localhost:3000/static_pages/home
+Completed 302 Found in 212ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 10:58:18 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 97ms (Views: 96.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 11:01:01 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:22: syntax error, unexpected tIDENTIFIER, expecting ')'
+... 'Create account' new_user_path );@output_buffer.safe_append...
+...                  ^~~~~~~~~~~~~):
+  
+app/views/layouts/application.html.erb:22: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 11:01:11 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 138ms (Views: 136.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:01:15 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 126ms (Views: 78.2ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:02:03 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 102ms (Views: 89.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-11 11:02:13 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"guJi69ISXsTcU5YdvuC3Yyr8olPbK64NYfLBnme1lODddJanDR1SUZ7Lt7e6LsK+/eCXeq1D/j3iPTtZsrAZHw==", "user"=>{"userid"=>"george1", "email"=>"george@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create account"}
+  [1m[35m (8.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'george@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 299ms (Views: 93.9ms | ActiveRecord: 10.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-11 11:03:12 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qEq/d7VZ7pAhWX3IAgtglaD7FFf4MM0CDVPxe5Tq2YcBYgnUSwQ+wVpJqlo/2DyJPXXhk7mt1VLaCGB7nAq62g==", "user"=>{"userid"=>"jamie1", "email"=>"jamie@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create account"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Exists (4.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jamie@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO `users` (`userid`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('jamie1', 'jamie@gmail.com', '$2a$10$LuG0h4eLRsm54Iyo5xKwOup5XV8f5mY82/dR0JPfqVqkB9EHLrs2m', '2019-02-11 11:03:12', '2019-02-11 11:03:12')[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:12
+Redirected to http://localhost:3000/static_pages/home
+Completed 302 Found in 202ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 11:03:12 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 119ms (Views: 118.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:28:24 +0000
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (undefined method `with' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:28:54 +0000
+  
+ActionController::RoutingError (undefined method `protect_from_forgery_with' for ApplicationController:Class
+Did you mean?  protect_from_forgery):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:29:05 +0000
+  
+ActionController::RoutingError (undefined method `with' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:29:30 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 9.1ms)
+
+
+  
+SyntaxError (/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:53: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...put_buffer.append=( if notice );@output_buffer.safe_append='...
+...                              ^
+/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:54: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...tput_buffer.append=( if alert );@output_buffer.safe_append='...
+...                              ^
+/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:63: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:65: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/layouts/application.html.erb:53: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/layouts/application.html.erb:54: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/layouts/application.html.erb:63: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:65: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:30:32 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:53: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...put_buffer.append=( if notice );@output_buffer.safe_append=' 
+...                              ^
+/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:57: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;       end 
+                ^~~
+/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:59: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...tput_buffer.append=( if alert );@output_buffer.safe_append=' 
+...                              ^
+/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:63: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;       end 
+                ^~~
+/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:72: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:74: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/layouts/application.html.erb:53: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/layouts/application.html.erb:57: syntax error, unexpected keyword_end, expecting ')'
+app/views/layouts/application.html.erb:59: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/layouts/application.html.erb:63: syntax error, unexpected keyword_end, expecting ')'
+app/views/layouts/application.html.erb:72: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:74: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:31:55 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:53: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...put_buffer.append=( if notice );@output_buffer.safe_append=' 
+...                              ^
+/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:60: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;       end 
+                ^~~
+/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:62: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...tput_buffer.append=( if alert );@output_buffer.safe_append=' 
+...                              ^
+/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:74: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:76: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/layouts/application.html.erb:53: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/layouts/application.html.erb:60: syntax error, unexpected keyword_end, expecting ')'
+app/views/layouts/application.html.erb:62: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/layouts/application.html.erb:74: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:76: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:32:25 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (23.1ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:53: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...put_buffer.append=( if notice );@output_buffer.safe_append=' 
+...                              ^
+/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:57: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...tput_buffer.append=( if alert );@output_buffer.safe_append=' 
+...                              ^
+/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:69: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:71: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/layouts/application.html.erb:53: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/layouts/application.html.erb:57: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/layouts/application.html.erb:69: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:71: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:32:45 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 1177ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    20:       <nav class="my-2 my-md-0 mr-md-3">
+    21: 
+    22:         <%= link_to 'Create account', new_user_path %>
+    23:           <% if current_user %>
+    24:               <a class="p-2 text-dark" href="#">
+    25:                 <%= link_to 'Log out', session_path('active'), method: :delete %>
+    26:               </a>
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb__3026348833099934055_47135103319560'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:35:29 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    20:       <nav class="my-2 my-md-0 mr-md-3">
+    21: 
+    22:         <%= link_to 'Create account', new_user_path %>
+    23:           <% if current_user %>
+    24:               <a class="p-2 text-dark" href="#">
+    25:                 <%= link_to 'Log out', session_path('active'), method: :delete %>
+    26:               </a>
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb__3026348833099934055_70117938557100'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:37:10 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:55: syntax error, unexpected keyword_end, expecting end-of-input
+...ut_buffer.append=( alert ); end ;@output_buffer.safe_append='
+...                            ^~~):
+  
+app/views/layouts/application.html.erb:55: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:39:33 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:55: syntax error, unexpected keyword_end, expecting end-of-input
+...ut_buffer.append=( alert ); end ;@output_buffer.safe_append='
+...                            ^~~):
+  
+app/views/layouts/application.html.erb:55: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:40:23 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (11.1ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:53: syntax error, unexpected keyword_end, expecting end-of-input
+...t_buffer.append=( notice ); end ;@output_buffer.safe_append='
+...                            ^~~):
+  
+app/views/layouts/application.html.erb:53: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:40:51 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (29.5ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/student/myRubyApps/rubyOnRails/bookstore_app/app/views/layouts/application.html.erb:52: syntax error, unexpected keyword_end, expecting end-of-input
+...t_buffer.append=( notice ); end ;@output_buffer.safe_append='
+...                            ^~~):
+  
+app/views/layouts/application.html.erb:52: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:42:25 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (9.6ms)
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    20:       <nav class="my-2 my-md-0 mr-md-3">
+    21: 
+    22:         <%= link_to 'Create account', new_user_path %>
+    23:           <% if current_user %>
+    24:               <a class="p-2 text-dark" href="#">
+    25:                 <%= link_to 'Log out', session_path('active'), method: :delete %>
+    26:               </a>
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb__3026348833099934055_70117830383520'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:43:32 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 147ms (ActiveRecord: 9.9ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    20:       <nav class="my-2 my-md-0 mr-md-3">
+    21: 
+    22:         <%= link_to 'Create account', new_user_path %>
+    23:           <% if current_user %>
+    24:               <a class="p-2 text-dark" href="#">
+    25:                 <%= link_to 'Log out', session_path('active'), method: :delete %>
+    26:               </a>
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb__3026348833099934055_70117934972160'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:44:36 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    20:       <nav class="my-2 my-md-0 mr-md-3">
+    21: 
+    22:         <%= link_to 'Create account', new_user_path %>
+    23:           <% if current_user %>
+    24:               <a class="p-2 text-dark" href="#">
+    25:                 <%= link_to 'Log out', session_path('active'), method: :delete %>
+    26:               </a>
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb__3026348833099934055_70117939255260'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:49:33 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 150ms (ActiveRecord: 5.5ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    20:       <nav class="my-2 my-md-0 mr-md-3">
+    21: 
+    22:         <%= link_to 'Create account', new_user_path %>
+    23:           <% if current_user %>
+    24:               <a class="p-2 text-dark" href="#">
+    25:                 <%= link_to 'Log out', session_path('active'), method: :delete %>
+    26:               </a>
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb__3026348833099934055_70117940991200'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:50:22 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (19.8ms)
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 8.4ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    20:       <nav class="my-2 my-md-0 mr-md-3">
+    21: 
+    22:         <%= link_to 'Create account', new_user_path %>
+    23:           <% if current_user %>
+    24:               <a class="p-2 text-dark" href="#">
+    25:                 <%= link_to 'Log out', session_path('active'), method: :delete %>
+    26:               </a>
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb__3026348833099934055_47135100326300'
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 11:51:36 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 5.9ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    20:       <nav class="my-2 my-md-0 mr-md-3">
+    21: 
+    22:         <%= link_to 'Create account', new_user_path %>
+    23:           <% if current_user %>
+    24:               <a class="p-2 text-dark" href="#">
+    25:                 <%= link_to 'Log out', session_path('active'), method: :delete %>
+    26:               </a>
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb__3026348833099934055_70117895906680'
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 11:52:42 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    20:       <nav class="my-2 my-md-0 mr-md-3">
+    21: 
+    22:         <%= link_to 'Create account', new_user_path %>
+    23:           <% if current_user %>
+    24:               <a class="p-2 text-dark" href="#">
+    25:                 <%= link_to 'Log out', session_path('active'), method: :delete %>
+    26:               </a>
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb__3026348833099934055_70117894912100'
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 11:52:59 +0000
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 690ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    20:       <nav class="my-2 my-md-0 mr-md-3">
+    21: 
+    22:         <%= link_to 'Create account', new_user_path %>
+    23:           <% if current_user %>
+    24:               <a class="p-2 text-dark" href="#">
+    25:                 <%= link_to 'Log out', session_path('active'), method: :delete %>
+    26:               </a>
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb___4479417712955186710_47138688237020'
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 11:55:01 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 120ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    20:       <nav class="my-2 my-md-0 mr-md-3">
+    21: 
+    22:         <%= link_to 'Create account', new_user_path %>
+    23:         <% if current_user %>
+    24:               <a class="p-2 text-dark" href="#">
+    25:                 <%= link_to 'Log out', session_path('active'), method: :delete %>
+    26:               </a>
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb___4479417712955186710_69858079935020'
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 11:55:03 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    20:       <nav class="my-2 my-md-0 mr-md-3">
+    21: 
+    22:         <%= link_to 'Create account', new_user_path %>
+    23:         <% if current_user %>
+    24:               <a class="p-2 text-dark" href="#">
+    25:                 <%= link_to 'Log out', session_path('active'), method: :delete %>
+    26:               </a>
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb___4479417712955186710_69857964716360'
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 11:55:28 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 141ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    20:       <nav class="my-2 my-md-0 mr-md-3">
+    21: 
+    22:         <%= link_to 'Create account', new_user_path %>
+    23:         <% if current_user %>
+    24:               <a class="p-2 text-dark" href="#">
+    25:                 <%= link_to 'Log out', session_path('active'), method: :delete %>
+    26:               </a>
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb___4479417712955186710_69857952064440'
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 11:55:29 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 172ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    20:       <nav class="my-2 my-md-0 mr-md-3">
+    21: 
+    22:         <%= link_to 'Create account', new_user_path %>
+    23:         <% if current_user %>
+    24:               <a class="p-2 text-dark" href="#">
+    25:                 <%= link_to 'Log out', session_path('active'), method: :delete %>
+    26:               </a>
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb___4479417712955186710_69858080411020'
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 11:59:19 +0000
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 555ms (Views: 545.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 11:59:28 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (321.3ms)
+Completed 500 Internal Server Error in 324ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007ff2a4a789f8>:0x00007ff2b4036a20>):
+    2: 	<h2>Please login</h2>
+    3: <%= form_tag sessions_path do %>
+    4: 
+    5: <%= f.text_field :userid, placeholder: 'Enter your username', class:'form-control' %>
+    6: <%= f.password_field :password, placeholder: 'Enter your username', class:'form-control' %>
+    7: <%= submit_tag 'Log in' %>
+    8: <% end %>
+  
+app/views/sessions/new.html.erb:5:in `block in _app_views_sessions_new_html_erb__4579451963676829158_70340060630260'
+app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb__4579451963676829158_70340060630260'
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 12:33:33 +0000
+  [1m[35m (49.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 1655ms (Views: 1636.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 12:33:38 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 184ms (Views: 146.4ms | ActiveRecord: 10.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-11 12:33:47 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8sF4cGIPTjbHaetE/u558JZ3CjQPfZHOWmHJvjGF6ch4WNJCdRSkro18N8v2Bnutwx5OFaY0zos5aLZAA/zxLw==", "user"=>{"userid"=>"jamie1", "email"=>"jamie@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create account"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jamie@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 384ms (Views: 173.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-11 12:34:02 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yf0hkv05w2eWg940myuoPT0gmpOINiyRJoM1jcf7QW0ivR5j/CoAhtXgPtY7szpeRF07+XX5BTf5uxzb0+GPjg==", "user"=>{"userid"=>"nice1", "email"=>"nice@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create account"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'nice@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Create (14.4ms)[0m  [1m[32mINSERT INTO `users` (`userid`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('nice1', 'nice@gmail.com', '$2a$10$sYXYCzYVwMv1GOd10Xg14eRcoUBEl1ynMbD.Ft97cDwR7GlS.qs4K', '2019-02-11 12:34:02', '2019-02-11 12:34:02')[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:12
+Redirected to http://localhost:3000/static_pages/home
+Completed 302 Found in 223ms (ActiveRecord: 15.8ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 12:34:02 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 104ms (Views: 103.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 12:34:12 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (397.8ms)
+Completed 500 Internal Server Error in 405ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007f445de6da18>:0x00007f445de614e8>):
+    2: 	<h2>Please login</h2>
+    3: <%= form_tag sessions_path do %>
+    4: 
+    5: <%= f.text_field :userid, placeholder: 'Enter your username', class:'form-control' %>
+    6: <%= f.password_field :password, placeholder: 'Enter your username', class:'form-control' %>
+    7: <%= submit_tag 'Log in' %>
+    8: <% end %>
+  
+app/views/sessions/new.html.erb:5:in `block in _app_views_sessions_new_html_erb___2553546862001122386_69965804959540'
+app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb___2553546862001122386_69965804959540'
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 12:35:15 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (737.3ms)
+Completed 500 Internal Server Error in 771ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007f445de6da18>:0x000055a8055b7ab8>):
+    2: 	<h2>Please login</h2>
+    3: <%= form_tag sessions_path do %>
+    4: 
+    5: <%= f.text_field :userid, nil, placeholder: 'Enter your username', class:'form-control' %>
+    6: <%= f.password_field :password, nil, placeholder: 'Enter your username', class:'form-control' %>
+    7: <%= submit_tag 'Log in' %>
+    8: <% end %>
+  
+app/views/sessions/new.html.erb:5:in `block in _app_views_sessions_new_html_erb___2553546862001122386_47090066390440'
+app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb___2553546862001122386_47090066390440'
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 12:35:47 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 187ms (Views: 184.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-02-11 12:35:49 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 106ms (Views: 105.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 12:35:51 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 134ms (Views: 133.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 12:36:09 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 153ms (Views: 151.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-02-11 12:36:15 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ar1HSbhzoJLH/HLK1IFHETkrhcpq2uSnE2EXq97yoqSB/Xi4uWBjc4Sfkih0GdVyQFYkoJcVzQHMWT79yuhsRw==", "userid"=>["jamie1"], "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userid` = 'jamie1' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 307ms (Views: 95.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 12:36:36 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 88ms (Views: 86.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors/search" for 127.0.0.1 at 2019-02-11 12:36:47 +0000
+Processing by AuthorsController#search as HTML
+  Rendering authors/search.html.erb within layouts/application
+  [1m[36mAuthor Load (7.3ms)[0m  [1m[34mSELECT `authors`.* FROM `authors`[0m
+  ↳ app/views/authors/search.html.erb:20
+  Rendered authors/search.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 144ms (Views: 119.2ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 12:36:51 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 92ms (Views: 91.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 12:36:54 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 90ms (Views: 88.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-02-11 12:37:00 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/4ezLxlAn5sns2neCEH2GNUH8hVdrvpvREwIYUCZBa64BYwvBLza3z0mMnnxoFy6Kck77GPxe9oazhNHgP6MLQ==", "userid"=>["jamie1"], "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userid` = 'jamie1' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 333ms (Views: 104.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-02-11 12:38:31 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z/cbhRUm6hiNE7EwBjiyt0MtljeJ8BuKYWp5T68BZ/H8b9LKgaslApyKwRWZh5Ur3SAVTQEuuaWHYp4fh4HAtA==", "userid"=>["george1"], "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (13.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userid` = 'george1' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 290ms (Views: 84.1ms | ActiveRecord: 13.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-02-11 12:38:39 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ggpgkk3OKU5iMgz2wFL0gzHPC5RKrgeZcqOsohuLMFmxkqnd2UPmVHOrfNNf7dMfr8KI7sJwpbaUq0vyMwuXHA==", "userid"=>["fred1"], "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userid` = 'fred1' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 287ms (Views: 112.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sessions" for 127.0.0.1 at 2019-02-11 12:39:06 +0000
+Processing by SessionsController#index as HTML
+Redirected to http://localhost:3000/static_pages/home
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 12:39:06 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 107ms (Views: 105.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 12:39:22 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 98ms (Views: 97.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-02-11 12:39:27 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vjzJWdTyIRGoR4D+zUI3/luMfdP3wVy2MyZAn1v3NGv5vvZZyQ5kVbLS21k0o51cp0K0Ksme3QNtpFu5m5C96A==", "userid"=>["fred1"], "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userid` = 'fred1' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 310ms (Views: 74.7ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 12:40:57 +0000
+  [1m[35m (0.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 525ms (Views: 516.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 12:41:02 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 107ms (Views: 106.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-02-11 12:43:48 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C0QBoTNL+q2xW8cwhYBv1tQStWHCO+GRuOfK23/QoZVMxj6hLre/6avOnJd8YcV0KNx8mPxkYCTmZdH9v7coFg==", "userid"=>["dsds"], "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userid` = 'dsds' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 150ms (Views: 134.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/sessions" for 127.0.0.1 at 2019-02-11 12:46:10 +0000
+  
+SyntaxError (/home/student/myRubyApps/rubyOnRails/bookstore_app/app/controllers/application_controller.rb:7: syntax error, unexpected '='
+		@current_user || = User.find(session[ :user_id]...
+		                 ^):
+  
+app/controllers/application_controller.rb:7: syntax error, unexpected '='
+app/controllers/sessions_controller.rb:1:in `<main>'
+Started GET "/sessions" for 127.0.0.1 at 2019-02-11 12:46:25 +0000
+Processing by SessionsController#index as HTML
+Redirected to http://localhost:3000/static_pages/home
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 12:46:25 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 118ms (Views: 116.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 12:46:29 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 87ms (Views: 86.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-02-11 12:46:34 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RBTR1Q/0bu/dVAARUgBcGHnZbDGs0EtdEV8zqlPYXR8Dlu7VEggrq8fBW7ar4fa6hRelyJKPyuhP3SiMk7/UnA==", "userid"=>["jamie1"], "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userid` = 'jamie1' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 328ms (Views: 101.5ms | ActiveRecord: 12.5ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-02-11 12:46:38 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WtMmmO9VqOwhEsph5xvk2n1DxQ0tw6vBwQTB4f5zK/FpS+/Xe9hn9jCLukR4pMNG405Gd6UdCe4nDCax1vOMtA==", "userid"=>[""], "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userid` = '' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 123ms (Views: 120.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/sessions" for 127.0.0.1 at 2019-02-11 12:47:43 +0000
+  [1m[35m (5.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#index as HTML
+Redirected to http://localhost:3000/static_pages/home
+Completed 302 Found in 25ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 12:47:43 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 542ms (Views: 541.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 12:47:46 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 101ms (Views: 100.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-02-11 12:47:51 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mqJoqNPwQgtC+c0cY6oRDfV/JHr8cshZahVBoXl78ZDdIFeozgwHT1hslruaS7uvCbHtg8ItSew0l1qHuRx4Ew==", "userid"=>["fred1"], "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userid` = 'fred1' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 345ms (Views: 91.0ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-02-11 12:48:04 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dU1dliN02V1UE1yZ+GizR5hCpweH3MzRT+h1HGOZnk9G1ZTZt/kWR0WKLLxn15TbBk8kfQ8Cbv6p4JJMSxk5Cg==", "userid"=>["jamie1"], "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userid` = 'jamie1' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 293ms (Views: 96.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/sessions" for 127.0.0.1 at 2019-02-11 12:48:43 +0000
+Processing by SessionsController#index as HTML
+Redirected to http://localhost:3000/static_pages/home
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 12:48:43 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 128ms (Views: 126.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 12:48:44 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 99ms (Views: 98.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-02-11 12:48:52 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jdU3LCrm0F5Dg7ZuzjozqY0juU8BYvzj48X9sSrglATKVwgsNxqVGlkW7ck325kLce1wtj89fVa9R+aX6ocdhw==", "userid"=>"fred1", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userid` = 'fred1' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/
+Completed 302 Found in 184ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-11 12:48:52 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 93ms (Views: 87.3ms | ActiveRecord: 4.5ms)
+
+
+Started DELETE "/sessions/active" for 127.0.0.1 at 2019-02-11 12:49:29 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sBJ7p5dxynCI2iuCGNKmvsCGWQmj03JfP9ypRl4zIf2DirLoA/wFaplDW6eHbYEiXovacysN0HDZ1E4WdrOGuA==", "id"=>"active"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-11 12:49:29 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 137ms (Views: 136.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 12:49:36 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 85ms (Views: 84.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/novels/new" for 127.0.0.1 at 2019-02-11 12:53:19 +0000
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/student/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by NovelsController#new as HTML
+  Rendering novels/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+  ↳ app/views/novels/new.html.erb:20
+  [1m[36mPublisher Load (0.2ms)[0m  [1m[34mSELECT `publishers`.* FROM `publishers`[0m
+  ↳ app/views/novels/new.html.erb:24
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors`[0m
+  ↳ app/views/novels/new.html.erb:28
+  Rendered novels/new.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 219ms (Views: 172.5ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/novels" for 127.0.0.1 at 2019-02-11 12:53:35 +0000
+Processing by NovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k1wNsR30E1983CXIzLbSJ+LxE1gylNgKEAgzKF3WQCl/xl/N0zDKu9ahxKAta8c8+QPMBzOh9bP9j4dwm9eU6w==", "novel"=>{"title"=>"Scrooge", "isbn"=>"43243", "format"=>"Book", "genre_id"=>"3", "publisher_id"=>"2", "author_id"=>"3", "price"=>"12", "pages"=>"121212", "publication"=>"2009", "description"=>"It is xmas book."}, "commit"=>"Submit"}
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 18ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 12:53:35 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 183ms (Views: 179.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-02-11 12:55:19 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OUn4yfwYwgsx/IwPO6mS0/AzBCjGuDVwW7oRbGTJTlEK0TGGaJUNESBl/CqkFrVPbj6HUk5ml1+9svY8TEnpFA==", "userid"=>"fred1", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userid` = 'fred1' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/
+Completed 302 Found in 248ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-11 12:55:19 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 128ms (Views: 126.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/novels/new" for 127.0.0.1 at 2019-02-11 12:55:21 +0000
+Processing by NovelsController#new as HTML
+  Rendering novels/new.html.erb within layouts/application
+  [1m[36mGenre Load (5.5ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+  ↳ app/views/novels/new.html.erb:20
+  [1m[36mPublisher Load (5.9ms)[0m  [1m[34mSELECT `publishers`.* FROM `publishers`[0m
+  ↳ app/views/novels/new.html.erb:24
+  [1m[36mAuthor Load (5.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors`[0m
+  ↳ app/views/novels/new.html.erb:28
+  Rendered novels/new.html.erb within layouts/application (29.2ms)
+  [1m[36mUser Load (12.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 153ms (Views: 123.8ms | ActiveRecord: 28.5ms)
+
+
+Started POST "/novels" for 127.0.0.1 at 2019-02-11 12:55:36 +0000
+Processing by NovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GnjhDXbPu1K2iS5CGfZKoIxYF3Jxw6Fp5jWBsMn25wD24rNxuAtithz0zyr4K1+7l6rILXD2jNALsjXoD/czwg==", "novel"=>{"title"=>"Jane Eyre", "isbn"=>"654366", "format"=>"Book", "genre_id"=>"1", "publisher_id"=>"2", "author_id"=>"3", "price"=>"12", "pages"=>"121212", "publication"=>"2009", "description"=>"It is xmas book."}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (2.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mAuthor Load (5.3ms)[0m  [1m[34mSELECT  `authors`.* FROM `authors` WHERE `authors`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mGenre Load (3.5ms)[0m  [1m[34mSELECT  `genres`.* FROM `genres` WHERE `genres`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mPublisher Load (3.7ms)[0m  [1m[34mSELECT  `publishers`.* FROM `publishers` WHERE `publishers`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mNovel Create (8.7ms)[0m  [1m[32mINSERT INTO `novels` (`title`, `genre_id`, `author_id`, `publisher_id`, `isbn`, `price`, `format`, `description`, `pages`, `created_at`, `updated_at`) VALUES ('Jane Eyre', 1, 3, 2, '654366', 12.0, 'Book', 'It is xmas book.', 121212, '2019-02-11 12:55:37', '2019-02-11 12:55:37')[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/novels_controller.rb:22
+Redirected to http://localhost:3000/novels
+Completed 302 Found in 66ms (ActiveRecord: 24.7ms)
+
+
+Started GET "/novels" for 127.0.0.1 at 2019-02-11 12:55:37 +0000
+Processing by NovelsController#index as HTML
+  Rendering novels/index.html.erb within layouts/application
+  [1m[36mNovel Load (1.3ms)[0m  [1m[34mSELECT `novels`.* FROM `novels`[0m
+  ↳ app/views/novels/index.html.erb:21
+  Rendered novels/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 153ms (Views: 142.7ms | ActiveRecord: 9.1ms)
+
+
+Started DELETE "/sessions/active" for 127.0.0.1 at 2019-02-11 12:55:44 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0bXxWCLR2VwRscNDx0cU4T5Cc/8dL80o5tMPvR1jmPTiLTgXtlwWRgAos2ZY+DN9oE/whZXxbwcA2+jtNeM/sQ==", "id"=>"active"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-11 12:55:44 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 105ms (Views: 104.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2019-02-11 12:56:42 +0000
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 78ms (Views: 77.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/novels/new" for 127.0.0.1 at 2019-02-11 12:56:44 +0000
+Processing by NovelsController#new as HTML
+  Rendering novels/new.html.erb within layouts/application
+  [1m[36mGenre Load (3.2ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+  ↳ app/views/novels/new.html.erb:20
+  [1m[36mPublisher Load (0.1ms)[0m  [1m[34mSELECT `publishers`.* FROM `publishers`[0m
+  ↳ app/views/novels/new.html.erb:24
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors`[0m
+  ↳ app/views/novels/new.html.erb:28
+  Rendered novels/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 127ms (Views: 122.6ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/novels" for 127.0.0.1 at 2019-02-11 12:57:00 +0000
+Processing by NovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tRC1oofxiJYXvIJiEQ3MzS969N4+MK/asLA0zsyAiplZiufeSTVRcr3BYwrw0NnWNIgrgT8FgmNdN4CWCoFeWw==", "novel"=>{"title"=>"Jane Eyre", "isbn"=>"654366", "format"=>"Book", "genre_id"=>"1", "publisher_id"=>"1", "author_id"=>"2", "price"=>"12", "pages"=>"121212", "publication"=>"2009", "description"=>"It is xmas book."}, "commit"=>"Submit"}
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 12:57:00 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 135ms (Views: 133.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/novels/new" for 127.0.0.1 at 2019-02-11 12:58:05 +0000
+Processing by NovelsController#new as HTML
+  Rendering novels/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+  ↳ app/views/novels/new.html.erb:20
+  [1m[36mPublisher Load (10.4ms)[0m  [1m[34mSELECT `publishers`.* FROM `publishers`[0m
+  ↳ app/views/novels/new.html.erb:24
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors`[0m
+  ↳ app/views/novels/new.html.erb:28
+  Rendered novels/new.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 140ms (Views: 73.4ms | ActiveRecord: 41.2ms)
+
+
+Started POST "/novels" for 127.0.0.1 at 2019-02-11 12:58:18 +0000
+Processing by NovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MtonKWt3lHx/wV3rOUuG1T8BNdumUqx5+k12qMItyZfeQHVVpbNNmNW8vIPYlpPOJPPqhKdngcAXysLwBCwdVQ==", "novel"=>{"title"=>"Jane Eyre", "isbn"=>"654366", "format"=>"Book", "genre_id"=>"3", "publisher_id"=>"2", "author_id"=>"2", "price"=>"12", "pages"=>"121212", "publication"=>"9001", "description"=>"It is xmas book."}, "commit"=>"Submit"}
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 12:58:18 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 247ms (Views: 245.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-02-11 12:58:36 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j9ujylPiwk5L1tK636zateJcwrQHq0aED3lDG6FG2ca8Q2qFx28NVFpPop9AE/0pfFFBzo915KvpcaRLicZ+gw==", "userid"=>"fred1", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userid` = 'fred1' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/
+Completed 302 Found in 218ms (ActiveRecord: 20.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-11 12:58:36 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 98ms (Views: 86.6ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/novels/new" for 127.0.0.1 at 2019-02-11 12:58:38 +0000
+Processing by NovelsController#new as HTML
+  Rendering novels/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+  ↳ app/views/novels/new.html.erb:20
+  [1m[36mPublisher Load (2.6ms)[0m  [1m[34mSELECT `publishers`.* FROM `publishers`[0m
+  ↳ app/views/novels/new.html.erb:24
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors`[0m
+  ↳ app/views/novels/new.html.erb:28
+  Rendered novels/new.html.erb within layouts/application (27.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 178ms (Views: 174.5ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/novels" for 127.0.0.1 at 2019-02-11 12:58:58 +0000
+Processing by NovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zL12pTCv+JaAoLiObMIuTQ5Rzq++UMVsbRIWY3pzpHEgJyTZ/mshcirdWeaNHztWFaMR8L9l6NWAlaI7vHJwsw==", "novel"=>{"title"=>"Jane Eyre", "isbn"=>"654366", "format"=>"Book", "genre_id"=>"1", "publisher_id"=>"2", "author_id"=>"3", "price"=>"12", "pages"=>"121212", "publication"=>"2009", "description"=>"It is xmas book."}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (3.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  `authors`.* FROM `authors` WHERE `authors`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mGenre Load (5.7ms)[0m  [1m[34mSELECT  `genres`.* FROM `genres` WHERE `genres`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mPublisher Load (0.1ms)[0m  [1m[34mSELECT  `publishers`.* FROM `publishers` WHERE `publishers`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mNovel Create (4.0ms)[0m  [1m[32mINSERT INTO `novels` (`title`, `genre_id`, `author_id`, `publisher_id`, `isbn`, `price`, `format`, `description`, `pages`, `created_at`, `updated_at`) VALUES ('Jane Eyre', 1, 3, 2, '654366', 12.0, 'Book', 'It is xmas book.', 121212, '2019-02-11 12:58:58', '2019-02-11 12:58:58')[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/novels_controller.rb:22
+Redirected to http://localhost:3000/novels
+Completed 302 Found in 32ms (ActiveRecord: 14.9ms)
+
+
+Started GET "/novels" for 127.0.0.1 at 2019-02-11 12:58:58 +0000
+Processing by NovelsController#index as HTML
+  Rendering novels/index.html.erb within layouts/application
+  [1m[36mNovel Load (12.6ms)[0m  [1m[34mSELECT `novels`.* FROM `novels`[0m
+  ↳ app/views/novels/index.html.erb:21
+  Rendered novels/index.html.erb within layouts/application (14.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 121ms (Views: 107.3ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 13:02:28 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 119ms (Views: 94.7ms | ActiveRecord: 23.1ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 13:03:00 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 168ms (Views: 162.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-02-11 13:03:16 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 198ms (Views: 194.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/novels/new" for 127.0.0.1 at 2019-02-11 13:03:24 +0000
+Processing by NovelsController#new as HTML
+  Rendering novels/new.html.erb within layouts/application
+  [1m[36mGenre Load (4.3ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+  ↳ app/views/novels/new.html.erb:20
+  [1m[36mPublisher Load (4.7ms)[0m  [1m[34mSELECT `publishers`.* FROM `publishers`[0m
+  ↳ app/views/novels/new.html.erb:24
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT `authors`.* FROM `authors`[0m
+  ↳ app/views/novels/new.html.erb:28
+  Rendered novels/new.html.erb within layouts/application (14.5ms)
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 233ms (Views: 79.8ms | ActiveRecord: 58.7ms)
+
+
+Started POST "/novels" for 127.0.0.1 at 2019-02-11 13:03:39 +0000
+Processing by NovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XHFjlpSZ6UZ96YirAeuJeIZDbm+AFNHKkX2zrmMWni6w6zHqWl0woteUacPgNpxjnbGxMIEh/HN8+gf2pRdK7A==", "novel"=>{"title"=>"Jane Eyre", "isbn"=>"654366", "format"=>"Paperback", "genre_id"=>"3", "publisher_id"=>"1", "author_id"=>"2", "price"=>"23", "pages"=>"121212", "publication"=>"2009", "description"=>"It is xmas book."}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (4.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mAuthor Load (1.5ms)[0m  [1m[34mSELECT  `authors`.* FROM `authors` WHERE `authors`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mGenre Load (15.9ms)[0m  [1m[34mSELECT  `genres`.* FROM `genres` WHERE `genres`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mPublisher Load (1.0ms)[0m  [1m[34mSELECT  `publishers`.* FROM `publishers` WHERE `publishers`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mNovel Create (5.6ms)[0m  [1m[32mINSERT INTO `novels` (`title`, `genre_id`, `author_id`, `publisher_id`, `isbn`, `price`, `format`, `description`, `pages`, `created_at`, `updated_at`) VALUES ('Jane Eyre', 3, 2, 1, '654366', 23.0, 'Paperback', 'It is xmas book.', 121212, '2019-02-11 13:03:39', '2019-02-11 13:03:39')[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/novels_controller.rb:22
+Redirected to http://localhost:3000/novels
+Completed 302 Found in 51ms (ActiveRecord: 30.1ms)
+
+
+Started GET "/novels" for 127.0.0.1 at 2019-02-11 13:03:39 +0000
+Processing by NovelsController#index as HTML
+  Rendering novels/index.html.erb within layouts/application
+  [1m[36mNovel Load (0.3ms)[0m  [1m[34mSELECT `novels`.* FROM `novels`[0m
+  ↳ app/views/novels/index.html.erb:21
+  Rendered novels/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 149ms (Views: 145.9ms | ActiveRecord: 2.7ms)
+
+
+Started DELETE "/novels/6" for 127.0.0.1 at 2019-02-11 13:03:46 +0000
+Processing by NovelsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LnajN9V9ceQnnyAMbzjEOfKar2IwZxItIEdrwiQHmzgd7mp4QfC+/jYGUCnwh+OlbJcsGLi5sALGT4ySDIc8fQ==", "id"=>"6"}
+  [1m[36mNovel Load (0.3ms)[0m  [1m[34mSELECT  `novels`.* FROM `novels` WHERE `novels`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:43
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/novels_controller.rb:44
+  [1m[36mNovel Destroy (1.2ms)[0m  [1m[31mDELETE FROM `novels` WHERE `novels`.`id` = 6[0m
+  ↳ app/controllers/novels_controller.rb:44
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/novels_controller.rb:44
+Redirected to http://localhost:3000/novels
+Completed 302 Found in 5ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/novels" for 127.0.0.1 at 2019-02-11 13:03:46 +0000
+Processing by NovelsController#index as HTML
+  Rendering novels/index.html.erb within layouts/application
+  [1m[36mNovel Load (3.0ms)[0m  [1m[34mSELECT `novels`.* FROM `novels`[0m
+  ↳ app/views/novels/index.html.erb:21
+  Rendered novels/index.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 117ms (Views: 110.6ms | ActiveRecord: 5.2ms)
+
+
+Started DELETE "/novels/5" for 127.0.0.1 at 2019-02-11 13:03:48 +0000
+Processing by NovelsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"T4XSfLYLeM4s+6P/ILkVJCy0ivDM5/2lynqP+cQMawV8HRszIoa31D1i09q/BjK4srkJikQ5X4oscmip7IzMQA==", "id"=>"5"}
+  [1m[36mNovel Load (0.6ms)[0m  [1m[34mSELECT  `novels`.* FROM `novels` WHERE `novels`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:43
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/novels_controller.rb:44
+  [1m[36mNovel Destroy (0.1ms)[0m  [1m[31mDELETE FROM `novels` WHERE `novels`.`id` = 5[0m
+  ↳ app/controllers/novels_controller.rb:44
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/novels_controller.rb:44
+Redirected to http://localhost:3000/novels
+Completed 302 Found in 11ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/novels" for 127.0.0.1 at 2019-02-11 13:03:48 +0000
+Processing by NovelsController#index as HTML
+  Rendering novels/index.html.erb within layouts/application
+  [1m[36mNovel Load (4.3ms)[0m  [1m[34mSELECT `novels`.* FROM `novels`[0m
+  ↳ app/views/novels/index.html.erb:21
+  Rendered novels/index.html.erb within layouts/application (5.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 147ms (Views: 127.3ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/novels" for 127.0.0.1 at 2019-02-11 13:04:27 +0000
+Processing by NovelsController#index as HTML
+  Rendering novels/index.html.erb within layouts/application
+  [1m[36mNovel Load (5.6ms)[0m  [1m[34mSELECT `novels`.* FROM `novels`[0m
+  ↳ app/views/novels/index.html.erb:21
+  Rendered novels/index.html.erb within layouts/application (10.5ms)
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 106ms (Views: 92.9ms | ActiveRecord: 12.0ms)
+
+
+Started DELETE "/sessions/active" for 127.0.0.1 at 2019-02-11 13:04:30 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ERKLojnyxgRObOGcgA/plz2b86vHTHqTAyUGtng8j4wiikLtrX8JHl/1kbkfsM4Lo5Zw0U+S2LzlLeHmULwoyQ==", "id"=>"active"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-11 13:04:30 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 146ms (Views: 145.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-02-11 13:04:31 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 119ms (Views: 118.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-02-11 13:04:38 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MHmaAJOCTl/rZTvi5eb9cFdGy/9PKaLI7iJb4UOF7Q93+6UAjn4LG/HwYEUcB1fSq4gCBnF2I32woEDHg+JkjA==", "userid"=>"fred1", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userid` = 'fred1' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/
+Completed 302 Found in 196ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-11 13:04:38 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 119ms (Views: 115.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-11 13:05:13 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 143ms (Views: 116.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/novels/new" for 127.0.0.1 at 2019-02-11 13:05:22 +0000
+Processing by NovelsController#new as HTML
+  Rendering novels/new.html.erb within layouts/application
+  [1m[36mGenre Load (4.1ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+  ↳ app/views/novels/new.html.erb:20
+  [1m[36mPublisher Load (4.8ms)[0m  [1m[34mSELECT `publishers`.* FROM `publishers`[0m
+  ↳ app/views/novels/new.html.erb:24
+  [1m[36mAuthor Load (11.9ms)[0m  [1m[34mSELECT `authors`.* FROM `authors`[0m
+  ↳ app/views/novels/new.html.erb:28
+  Rendered novels/new.html.erb within layouts/application (37.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 122ms (Views: 99.9ms | ActiveRecord: 21.0ms)
+
+
+Started POST "/novels" for 127.0.0.1 at 2019-02-11 13:06:51 +0000
+Processing by NovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZKA+nRhHwtKS6fJ0/hz9RGZLl/BSZ3HPZxo8djxzRROIOmzh1oMbNjiUExwfwehffblIr1NSXHaKnYgu+nKR0Q==", "novel"=>{"title"=>"Henry Goes to Tesco", "isbn"=>"123454", "format"=>"Paperback", "genre_id"=>"1", "publisher_id"=>"3", "author_id"=>"3", "price"=>"45", "pages"=>"3", "publication"=>"2/2/18", "description"=>"Best selling book for 2019"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mAuthor Load (1.9ms)[0m  [1m[34mSELECT  `authors`.* FROM `authors` WHERE `authors`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT  `genres`.* FROM `genres` WHERE `genres`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mPublisher Load (2.8ms)[0m  [1m[34mSELECT  `publishers`.* FROM `publishers` WHERE `publishers`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mNovel Create (3.1ms)[0m  [1m[32mINSERT INTO `novels` (`title`, `genre_id`, `author_id`, `publisher_id`, `isbn`, `price`, `publication`, `format`, `description`, `pages`, `created_at`, `updated_at`) VALUES ('Henry Goes to Tesco', 1, 3, 3, '123454', 45.0, '0002-02-18', 'Paperback', 'Best selling book for 2019', 3, '2019-02-11 13:06:51', '2019-02-11 13:06:51')[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/novels_controller.rb:22
+Redirected to http://localhost:3000/novels
+Completed 302 Found in 19ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/novels" for 127.0.0.1 at 2019-02-11 13:06:51 +0000
+Processing by NovelsController#index as HTML
+  Rendering novels/index.html.erb within layouts/application
+  [1m[36mNovel Load (0.4ms)[0m  [1m[34mSELECT `novels`.* FROM `novels`[0m
+  ↳ app/views/novels/index.html.erb:21
+  Rendered novels/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 136ms (Views: 131.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/novels" for 127.0.0.1 at 2019-02-11 13:09:30 +0000
+Processing by NovelsController#index as HTML
+  Rendering novels/index.html.erb within layouts/application
+  [1m[36mNovel Load (12.4ms)[0m  [1m[34mSELECT `novels`.* FROM `novels`[0m
+  ↳ app/views/novels/index.html.erb:21
+  Rendered novels/index.html.erb within layouts/application (15.0ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 159ms (Views: 143.3ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/novels/new" for 127.0.0.1 at 2019-02-11 13:09:35 +0000
+Processing by NovelsController#new as HTML
+  Rendering novels/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT `genres`.* FROM `genres`[0m
+  ↳ app/views/novels/new.html.erb:20
+  [1m[36mPublisher Load (1.8ms)[0m  [1m[34mSELECT `publishers`.* FROM `publishers`[0m
+  ↳ app/views/novels/new.html.erb:24
+  [1m[36mAuthor Load (5.4ms)[0m  [1m[34mSELECT `authors`.* FROM `authors`[0m
+  ↳ app/views/novels/new.html.erb:28
+  Rendered novels/new.html.erb within layouts/application (30.7ms)
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 121ms (Views: 106.7ms | ActiveRecord: 13.2ms)
+
+
+Started POST "/novels" for 127.0.0.1 at 2019-02-11 13:10:32 +0000
+Processing by NovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TpNgo4kn7BR8V6CCsANCQsMWsWznjvA9l3D6yFDQa92iCTLfR+M18NYqQepR3ldZ2ORuM+a73YR6906QltG/Hw==", "novel"=>{"title"=>"Nuns and buns", "isbn"=>"09877", "format"=>"Paperback", "genre_id"=>"2", "publisher_id"=>"1", "author_id"=>"2", "price"=>"999", "pages"=>"1458", "publication"=>"9/4/99", "description"=>"The best cookbook to date"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (4.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mAuthor Load (2.3ms)[0m  [1m[34mSELECT  `authors`.* FROM `authors` WHERE `authors`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  `genres`.* FROM `genres` WHERE `genres`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mPublisher Load (0.1ms)[0m  [1m[34mSELECT  `publishers`.* FROM `publishers` WHERE `publishers`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[36mNovel Create (0.2ms)[0m  [1m[32mINSERT INTO `novels` (`title`, `genre_id`, `author_id`, `publisher_id`, `isbn`, `price`, `format`, `description`, `pages`, `created_at`, `updated_at`) VALUES ('Nuns and buns', 2, 2, 1, '09877', 999.0, 'Paperback', 'The best cookbook to date', 1458, '2019-02-11 13:10:32', '2019-02-11 13:10:32')[0m
+  ↳ app/controllers/novels_controller.rb:22
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/novels_controller.rb:22
+Redirected to http://localhost:3000/novels
+Completed 302 Found in 29ms (ActiveRecord: 13.1ms)
+
+
+Started GET "/novels" for 127.0.0.1 at 2019-02-11 13:10:32 +0000
+Processing by NovelsController#index as HTML
+  Rendering novels/index.html.erb within layouts/application
+  [1m[36mNovel Load (4.0ms)[0m  [1m[34mSELECT `novels`.* FROM `novels`[0m
+  ↳ app/views/novels/index.html.erb:21
+  Rendered novels/index.html.erb within layouts/application (6.5ms)
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 153ms (Views: 141.5ms | ActiveRecord: 10.8ms)
+
+

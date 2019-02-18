@@ -1,4 +1,7 @@
 class NovelsController < ApplicationController
+
+  before_action :authorize, :only => [ :create]
+
   def index
     @novel=Novel.all
   end
@@ -17,9 +20,9 @@ class NovelsController < ApplicationController
   def create
     @novel = Novel.new(novel_params)
     if @novel.save
-      redirect_to novels_path
+      redirect_to novels_path, notice: "You have successfully created a new novel"
     else
-      render 'new'
+      redirect_to novels_path, alert: "You will need to be signed in to create a novel"
     end
   end
 

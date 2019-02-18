@@ -1,0 +1,41 @@
+<div class="container">
+
+	<h2>Create a user account</h2>
+
+<%= form_for @user do |f| %>
+
+<div class="field" style="100%">
+
+	<% if @user.errors.any? %>
+
+	<div id="error_explanation">
+
+	<h2>
+	<%= pluralize(@user.errors.count, "error") %>
+	prohibted this from being saved:
+    </h2>
+
+<p>
+	<ul>
+		<% @user.errors.full_messages.each do |msg| %>
+			<l1>
+				<%= msg %>
+			</l1>
+	</ul>
+<% end %>
+</p>
+
+<% if alert %>
+	<%= alert %>
+	<% end %>
+</div>
+<% end %>
+
+<%= f.text_field :userid, placeholder: 'Please enter a username', class:'form-control' %>
+<%= f.email_field :email, placeholder: 'Please enter your email', class:'form-control' %>
+<%= f.password_field :password, placeholder: 'Please create a password', class:'form-control' %>
+<%= f.password_field :password_confirmation, placeholder: 'Confirm your password', class:'form-control' %>
+	<%= f.submit 'Create account' %>
+	<% end %>
+</div>
+</div>

@@ -19,12 +19,6 @@
 
       <nav class="my-2 my-md-0 mr-md-3">
 
-        <%= link_to 'Add new book', new_book_path %>
-        <%= link_to 'Add new novel', new_novel_path %>#
-        <%= link_to 'List all novels', novels_path %>
-        <%= link_to 'Add new publisher', new_publisher_path %>
-        <%= link_to 'Add new author', new_author_path %>
-        <%= link_to 'Add new genre', new_genre_path %>
         <%=link_to "Home", '#'%>
         <!--<a class="p-2 text-dark" href="<%=link_to "Home", '#'%>"> Home</a>-->
         <%=link_to "About Us", '#'%>
@@ -35,7 +29,34 @@
        
       </nav>
 
+      
       </div>
+
+        <%= link_to 'Create account', new_user_path %> |
+        <%= link_to 'Add new book', new_book_path %> |
+        <%= link_to 'Add new novel', new_novel_path %> |
+        <%= link_to 'List all novels', novels_path %> |
+        <%= link_to 'Add new publisher', new_publisher_path %> |
+        <%= link_to 'Add new author', new_author_path %> |
+        <%= link_to 'Add new genre', new_genre_path %> |
+
+        <br>
+        <% if current_user %>
+              <a class="p-2 text-dark" href="#">
+                <%= link_to 'Log out', session_path('active'), method: :delete %>
+              </a>
+              <a class="p-2 text-dark" href="#">
+                <%= current_user.userid %>
+              </a>
+          <% else %>
+              <a class="p-2 text-dark" href="#">
+                <%= link_to 'Log in', new_session_path, class: "active_nav_link" %>
+              </a>
+        <% end %>
+
+      <% if alert %><%= alert %><% end %>
+      <% if notice %><%= notice %><% end %>
+
       <%= yield %>
   </div>
 

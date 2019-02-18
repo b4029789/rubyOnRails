@@ -14,9 +14,9 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.new(author_params)
     if @author.save
-      redirect_to authors_path
+      redirect_to authors_path, notice: "You have successfully created a new author"
     else
-      render 'new'
+      redirect_to authors_path, alert: "You will need to be signed in to create a author"
     end
   end
 
